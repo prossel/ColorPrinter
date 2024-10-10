@@ -3,6 +3,7 @@
 // a pdf will be created and saved in the same folder with the same name as the palette.svg file, then printed.
 
 import processing.pdf.*;
+import java.io.File;
 
 String archivesFolder;
 
@@ -203,7 +204,7 @@ void monitorFolder() {
 
           // preview
           paletteFilename = files[i].getName();
-          shape = loadShape(palettesFolder + paletteFilename);
+          shape = loadShape(palettesFolder + File.separator + paletteFilename);
           previewPage(paletteFilename);
 
           // export page
